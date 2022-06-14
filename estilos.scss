@@ -1,0 +1,41 @@
+
+$colores:(blanco: red, gris:#cec8c8, negro:#000);
+
+p {
+    color: map-get($colores, blanco );
+    background-color: map-get($colores, negro);
+    font-size: 55px;
+    text-align: center;
+}
+
+.redsocial {
+    border: 3px solid black;
+    background-color: rgb(246, 246, 10);
+    height: 350px;
+    width: 750px;
+    padding: 30px;
+}
+
+.redsocial--nueva {
+    @extend .redsocial;
+    border-width: 4px;
+    color: white;
+    font-size: large;
+}
+
+/*Mixin*/
+
+@mixin sizes ($height, $width, $bcolor) {
+    height: $height;
+    width: $width;
+    background-color: $bcolor;
+}
+
+.box1 {
+    @include sizes(400px, 100%, rgb(6, 81, 26));
+}
+
+.box2 {
+    @include sizes(200px, 50%, rgb(5, 5, 77));
+}
+
